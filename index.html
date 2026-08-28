@@ -3,497 +3,288 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Asim | Aspiring Learner</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Muhammad Asim — Learning Log</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Muhammad Asim Portfolio" />
-    <meta name="theme-color" content="#7c3aed" />
+    <meta name="description" content="Muhammad Asim — self-taught programmer's learning log" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#eef2f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14181f" media="(prefers-color-scheme: dark)" />
 </head>
 <body>
 
-    <div class="hero-bg"></div>
     <div class="grid-overlay"></div>
+    <div class="margin-rule"></div>
 
-    <div id="particles"></div>
-
-    <nav class="nav-blur fixed top-0 left-0 w-full z-50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="#home" class="text-xl font-bold">
-                <span class="text-purple-400">&lt;</span><span class="text-white">Asim</span><span class="text-purple-400">/&gt;</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#home" class="nav-link text-sm text-gray-400 hover:text-purple-400 transition-colors">Home</a>
-                <a href="#about" class="nav-link text-sm text-gray-400 hover:text-purple-400 transition-colors">About</a>
-                <a href="#journey" class="nav-link text-sm text-gray-400 hover:text-purple-400 transition-colors">Journey</a>
-                <a href="#skills" class="nav-link text-sm text-gray-400 hover:text-purple-400 transition-colors">Skills</a>
-                <a href="#learning" class="nav-link text-sm text-gray-400 hover:text-purple-400 transition-colors">Learning</a>
-                <a href="#contact" class="nav-link text-sm text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
+    <nav class="tabs-nav">
+        <div class="tabs-inner">
+            <a href="#home" class="brand">asim<span class="dot">.log</span></a>
+            <div class="tab-links">
+                <a href="#home" class="tab-link">~/home</a>
+                <a href="#about" class="tab-link">~/about</a>
+                <a href="#journey" class="tab-link">~/log</a>
+                <a href="#skills" class="tab-link">~/toolkit</a>
+                <a href="#learning" class="tab-link">~/focus</a>
+                <a href="#contact" class="tab-link">~/contact</a>
             </div>
-            <button id="menuBtn" class="md:hidden text-white focus:outline-none" onclick="toggleMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
             </button>
         </div>
     </nav>
 
-    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-[#0b0b12] z-50 p-8 flex flex-col gap-6 border-l border-purple-900/20">
-        <button onclick="toggleMenu()" class="self-end text-gray-400 hover:text-white">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+    <div id="mobileMenu">
+        <button onclick="toggleMenu()" aria-label="Close menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round"/></svg>
         </button>
-        <a href="#home" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-purple-400 transition-colors">Home</a>
-        <a href="#about" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-purple-400 transition-colors">About</a>
-        <a href="#journey" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-purple-400 transition-colors">Journey</a>
-        <a href="#skills" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-        <a href="#learning" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-purple-400 transition-colors">Learning</a>
-        <a href="#contact" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
+        <a href="#home" onclick="toggleMenu()">~/home</a>
+        <a href="#about" onclick="toggleMenu()">~/about</a>
+        <a href="#journey" onclick="toggleMenu()">~/log</a>
+        <a href="#skills" onclick="toggleMenu()">~/toolkit</a>
+        <a href="#learning" onclick="toggleMenu()">~/focus</a>
+        <a href="#contact" onclick="toggleMenu()">~/contact</a>
     </div>
 
-    <main class="relative z-10">
+    <main>
 
-        <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="flex justify-center mb-8 reveal">
-                    <div class="avatar-ring w-36 h-36 overflow-hidden">
-                        <img src="https://i.pinimg.com/736x/61/db/76/61db7652cefb51ba4d3216b1ee00c8e2.jpg" alt="MA" class="w-full h-full rounded-full object-cover" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                        <div class="w-full h-full rounded-full bg-gradient-to-br from-purple-900 to-blue-900 items-center justify-center hidden">
-                            <span class="text-5xl font-black text-white">MA</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-center gap-2 mb-6 reveal">
-                    <span class="status-dot"></span>
-                    <span class="text-sm text-purple-300 mono">Actively reading, coding & breaking things</span>
-                </div>
-
-                <h1 class="text-5xl md:text-7xl font-black mb-4 reveal">
-                    <span class="text-white glow-text">Muhammad</span>
-                    <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400 bg-clip-text text-transparent"> Asim</span>
-                </h1>
-
-                <div class="text-lg md:text-xl text-gray-400 mb-4 reveal mono">
-                    <span class="text-purple-400 font-bold">~</span> aspiring_programmer <span class="cursor"></span>
-                </div>
-
-                <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto mb-10 reveal leading-relaxed">
-                    A passionate <span class="text-purple-400 font-semibold">self-taught learner</span> working hard, Googling every error, and practicing daily from D.G. Khan, Pakistan.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
-                    <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-semibold rounded-full hover:from-purple-500 hover:to-violet-500 transition-all shadow-lg shadow-purple-900/30 hover:shadow-purple-700/40 hover:scale-105 transform">
-                        Connect With Me
-                    </a>
-                    <a href="#learning" class="px-8 py-3 border border-purple-500/30 text-purple-300 font-semibold rounded-full hover:bg-purple-500/10 transition-all hover:border-purple-400/50">
-                        My Learning Log
-                    </a>
-                </div>
-
-                <div class="mt-16 reveal">
-                    <div class="w-6 h-10 border-2 border-purple-500/30 rounded-full mx-auto flex justify-center">
-                        <div class="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-bounce"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <span class="mono text-purple-400 text-sm tracking-widest uppercase">My Motivation</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">About <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Me</span></h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="reveal">
-                        <div class="code-block rounded-2xl p-6 text-sm leading-relaxed">
-                            <div class="flex items-center gap-2 mb-4">
-                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                <span class="ml-3 text-gray-500 text-xs">learner_profile.json</span>
-                            </div>
-                            <pre class="text-gray-300"><span class="text-purple-400">const</span> <span class="text-blue-400">student</span> = {
-  <span class="text-green-400">name</span>: <span class="text-yellow-300">"Muhammad Asim"</span>,
-  <span class="text-green-400">status</span>: <span class="text-yellow-300">"Dedicated Amateur / Learner"</span>,
-  <span class="text-green-400">location</span>: <span class="text-yellow-300">"D.G. Khan, Pakistan"</span>,
-  <span class="text-green-400">learningVia</span>: [<span class="text-yellow-300">"Google"</span>, <span class="text-yellow-300">"Documentation"</span>, <span class="text-yellow-300">"Trial & Error"</span>],
-  <span class="text-green-400">willBeProOneDay</span>: <span class="text-orange-400">true</span>
-};</pre>
-                        </div>
-                    </div>
-
-                    <div class="reveal">
-                        <div class="card rounded-2xl p-8">
-                            <h3 class="text-2xl font-bold text-white mb-4">
-                                Hey, I'm Asim! <span class="text-3xl">🚀</span>
-                            </h3>
-                            <p class="text-gray-400 leading-relaxed mb-4">
-                                I am an independent, self-guided programming learner based in <span class="text-blue-400">Dera Ghazi Khan, Pakistan</span>. 
-                            </p>
-                            <p class="text-gray-400 leading-relaxed mb-4">
-                                I don't have a massive background or a professional engineering degree—I'm a determined amateur right now. My daily routine is simple: **I Google things, read docs, write code, run into errors, fix them, and repeat.**
-                            </p>
-                            <p class="text-gray-400 leading-relaxed mb-6">
-                                I choose to study independently because I enjoy the challenge of solving puzzles on my own. I'm focusing my energy on core logic, basic scripting, and understanding how the web works from scratch.
-                            </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs mono">📖 Self-Studying Daily</span>
-                                <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs mono">🔍 Active Googler</span>
-                                <span class="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs mono">🔨 Practice-First Mentality</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="journey" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <span class="mono text-purple-400 text-sm tracking-widest uppercase">My Progress Path</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">
-                        How I <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Learn & Grow</span>
-                    </h2>
-                </div>
-
-                <div class="max-w-3xl mx-auto">
-                    <div class="relative pl-8 pb-12 reveal">
-                        <div class="absolute left-0 top-0 w-0.5 h-full timeline-line"></div>
-                        <div class="absolute left-[-5px] top-1 w-3 h-3 bg-purple-500 rounded-full pulse-ring"></div>
-                        <div class="card rounded-2xl p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs mono">Step 1</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-1">Googling & Reading</h3>
-                            <p class="text-purple-400 font-medium mb-3">Understanding the Basics</p>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                Whenever I want to build or understand something, I head straight to Google, stack overflow, or technical documentation. I analyze tutorials to learn how things connect.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 pb-12 reveal">
-                        <div class="absolute left-0 top-0 w-0.5 h-full timeline-line"></div>
-                        <div class="absolute left-[-5px] top-1 w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <div class="card rounded-2xl p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs mono">Step 2</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-1">Breaking & Building</h3>
-                            <p class="text-blue-400 font-medium mb-3">Trial and Error</p>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                I don't just copy paste. I write the code myself, intentionally tweak parts of it to see why it breaks, and spend time analyzing how to piece it back together.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 reveal">
-                        <div class="absolute left-0 top-0 w-0.5 h-12 timeline-line opacity-30"></div>
-                        <div class="absolute left-[-5px] top-1 w-3 h-3 bg-gray-600 rounded-full border-2 border-dashed border-gray-400"></div>
-                        <div class="card rounded-2xl p-6 border-dashed border-purple-500/20">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-yellow-400 text-xs mono">Ultimate Goal</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-1">Becoming a Pro Developer</h3>
-                            <p class="text-yellow-400/70 font-medium mb-3">Future Aim</p>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                With continuous practice, structured learning, and taking on bigger script projects, I aim to master software principles and become a confident, highly skilled professional developer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <span class="mono text-purple-400 text-sm tracking-widest uppercase">My Toolkit</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">
-                        Topics I'm <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Practicing</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="card rounded-2xl p-6 reveal">
-                        <div class="text-4xl mb-4">💻</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Coding Languages</h3>
-                        <p class="text-gray-400 text-sm mb-4">My current progress in foundational syntaxes</p>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs text-gray-400">HTML / CSS</span>
-                                    <span class="text-xs text-purple-400 mono">65%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="skill-fill h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="--skill-width: 65%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs text-gray-400">JavaScript</span>
-                                    <span class="text-xs text-purple-400 mono">40%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="skill-fill h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full" style="--skill-width: 40%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs text-gray-400">C / C++ (Basics)</span>
-                                    <span class="text-xs text-purple-400 mono">35%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="skill-fill h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full" style="--skill-width: 35%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-2xl p-6 reveal">
-                        <div class="text-4xl mb-4">🧠</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Learning Focus</h3>
-                        <p class="text-gray-400 text-sm mb-4">Concepts I am trying to wrap my head around</p>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs text-gray-400">Logical Thinking</span>
-                                    <span class="text-xs text-purple-400 mono">50%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="skill-fill h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" style="--skill-width: 50%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs text-gray-400">Git & Github Basics</span>
-                                    <span class="text-xs text-purple-400 mono">45%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="skill-fill h-full bg-gradient-to-r from-purple-500 to-violet-500 rounded-full" style="--skill-width: 45%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs text-gray-400">Problem Solving</span>
-                                    <span class="text-xs text-purple-400 mono">55%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="skill-fill h-full bg-gradient-to-r from-red-500 to-pink-500 rounded-full" style="--skill-width: 55%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-2xl p-6 reveal">
-                        <div class="text-4xl mb-4">🚀</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Current Interests</h3>
-                        <p class="text-gray-400 text-sm mb-4">Cool topics I hope to practice soon</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-2 bg-purple-500/10 border border-purple-500/20 rounded-lg text-purple-300 text-xs">🌐 Basic HTML pages</span>
-                            <span class="px-3 py-2 bg-blue-500/10 border border-blue-500/20 rounded-lg text-blue-300 text-xs">🤖 Simple Automation</span>
-                            <span class="px-3 py-2 bg-green-500/10 border border-green-500/20 rounded-lg text-green-300 text-xs">🕸️ Web Scraping Intro</span>
-                            <span class="px-3 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-lg text-yellow-300 text-xs">🐍 Python Basics</span>
-                            <span class="px-3 py-2 bg-red-500/10 border border-red-500/20 rounded-lg text-red-300 text-xs">💻 Terminal Commands</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="learning" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <span class="mono text-purple-400 text-sm tracking-widest uppercase">My Study Plan</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">
-                        What I Am <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Googling & Learning</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="reveal">
-                        <div class="card rounded-2xl p-8 h-full">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">📚</span>
-                                <span class="badge-pulse px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-xs mono">learning progress</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3">Daily Study Focus</h3>
-                            <ul class="space-y-3 text-gray-300">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-purple-400 mt-1">▹</span>
-                                    <span><span class="font-semibold text-white">JavaScript logic</span> — learning loops, arrays, and functions</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-blue-400 mt-1">▹</span>
-                                    <span><span class="font-semibold text-white">Python Scripting</span> — understanding scripts that handle simple files and tasks</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-green-400 mt-1">▹</span>
-                                    <span><span class="font-semibold text-white">Using Git & Terminal</span> — getting comfortable with the command line</span>
-                                </li>
-                            </ul>
-                            <div class="mt-6 p-4 bg-purple-500/5 border border-purple-500/10 rounded-xl">
-                                <p class="text-sm text-gray-400">
-                                    <span class="text-purple-400 font-mono">→</span> Next: Start building simple script tools and sharing them on Github.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal">
-                        <div class="card rounded-2xl p-8 h-full border-blue-500/20">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">🕸️</span>
-                                <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300 text-xs mono">future curiosity</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3">Web Scraping Interest</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                I am highly curious about Web Scraping! I want to learn how to write simple scripts to pull data from web pages using tools like Python. It is a fantastic way to practice actual logic.
-                            </p>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-center gap-3 bg-gray-900/40 p-3 rounded-lg">
-                                    <span class="text-blue-400">📦</span>
-                                    <span class="text-gray-300">Curious about: BeautifulSoup / Requests</span>
-                                </div>
-                                <div class="flex items-center gap-3 bg-gray-900/40 p-3 rounded-lg">
-                                    <span class="text-green-400">🎯</span>
-                                    <span class="text-gray-300">Goal: Scraping simple lists and saving them as text files</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-24 px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <span class="mono text-purple-400 text-sm tracking-widest uppercase">Let's Connect</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">
-                        Get In <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="reveal">
-                        <div class="card rounded-2xl p-8 h-full">
-                            <h3 class="text-2xl font-bold text-white mb-6">Contact Info</h3>
-                            <a href="mailto:aasimdott@yahoo.com" class="flex items-center gap-4 mb-6 group">
-                                <div class="w-12 h-12 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center group-hover:bg-purple-500/20 transition-colors">
-                                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-500 uppercase tracking-wider">Email</p>
-                                    <p class="text-purple-300 group-hover:text-purple-200 transition-colors">aasimdott@yahoo.com</p>
-                                </div>
-                            </a>
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="w-12 h-12 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-500 uppercase tracking-wider">Username</p>
-                                    <p class="text-blue-300">@aasimdott</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 mb-8">
-                                <div class="w-12 h-12 bg-green-500/10 border border-green-500/20 rounded-xl flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-500 uppercase tracking-wider">Location</p>
-                                    <p class="text-green-300">D.G. Khan, Pakistan</p>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">Follow My Journey</p>
-                                <div class="flex gap-4">
-                                    <a href="https://instagram.com/aasimdott" target="_blank" class="social-icon w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 rounded-xl flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                                        </svg>
-                                    </a>
-                                    <a href="https://x.com/aasimdott" target="_blank" class="social-icon w-12 h-12 bg-white rounded-xl flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal">
-                        <div class="card rounded-2xl p-8">
-                            <h3 class="text-2xl font-bold text-white mb-6">Send a Message</h3>
-                            <form id="contactForm" onsubmit="handleSubmit(event)">
-                                <div class="mb-4">
-                                    <label class="block text-sm text-gray-400 mb-2">Your Name</label>
-                                    <input type="text" required placeholder="Enter your name" class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all" />
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-sm text-gray-400 mb-2">Your Email</label>
-                                    <input type="email" required placeholder="Enter your email" class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all" />
-                                </div>
-                                <div class="mb-6">
-                                    <label class="block text-sm text-gray-400 mb-2">Message</label>
-                                    <textarea required rows="4" placeholder="Write your message..." class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all resize-none"></textarea>
-                                </div>
-                                <button type="submit" id="submitBtn" class="w-full py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-violet-500 transition-all shadow-lg shadow-purple-900/20 hover:shadow-purple-700/30 hover:scale-[1.02] transform">
-                                    Send Message ✨
-                                </button>
-                                <div id="successMsg" class="hidden mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-sm text-center">
-                                    ✅ Message sent successfully! I'll get back to you soon.
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="py-8 px-6 border-t border-purple-900/10">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="text-center md:text-left">
-                    <p class="text-gray-500 text-sm">
-                        <span class="mono">&copy;</span> 2026 <span class="text-purple-400">Muhammad Asim</span>. Practicing to be a pro.
+        <section id="home">
+            <div class="hero-grid">
+                <div>
+                    <span class="hero-eyebrow reveal"><span class="status-dot"></span> compiling knowledge, one error at a time</span>
+                    <h1 class="hero-title reveal">Muhammad<br><span class="accent">Asim</span></h1>
+                    <p class="hero-terminal reveal"><span class="prompt">$</span> whoami<br>&gt; self-taught programmer, Pakistani<span class="caret"></span></p>
+                    <p class="hero-body reveal">
+                        No degree, no bootcamp — just <mark>documentation, Stack Overflow, and a lot of trial and error</mark>. Every page on this site is something I actually broke and fixed while learning how the web works.
                     </p>
+                    <div class="hero-actions reveal">
+                        <a href="#contact" class="stamp-btn solid">say hello →</a>
+                        <a href="#journey" class="stamp-btn">read the log</a>
+                    </div>
                 </div>
-                <div class="flex items-center gap-6">
-                    <a href="https://instagram.com/aasimdott" target="_blank" class="text-gray-500 hover:text-purple-400 transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="https://x.com/aasimdott" target="_blank" class="text-gray-500 hover:text-purple-400 transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <a href="mailto:aasimdott@yahoo.com" class="text-gray-500 hover:text-purple-400 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </a>
+
+                <div class="index-card reveal">
+                    <div class="card-label">field notes · card 01</div>
+                    <dl>
+                        <dt>status</dt><dd>learning, daily</dd>
+                        <dt>based in</dt><dd>D.G. Khan, PK</dd>
+                        <dt>method</dt><dd>Google → docs → code → break → fix</dd>
+                        <dt>currently on</dt><dd>JS logic, Python scripts</dd>
+                        <dt>next up</dt><dd>web scraping</dd>
+                    </dl>
                 </div>
-                <p class="text-gray-600 text-xs mono">
-                    Step-by-step progress <span class="text-red-400">♥</span>
-                </p>
             </div>
-        </footer>
+        </section>
+
+        <section id="about">
+            <span class="eyebrow reveal">01 — motivation</span>
+            <h2 class="section-title reveal">why I'm doing this the hard way</h2>
+
+            <div class="about-grid">
+                <div class="profile-card reveal">
+                    <div class="card-title">quick facts</div>
+                    <div class="profile-row"><span>name</span><span>Muhammad Asim</span></div>
+                    <div class="profile-row"><span>status</span><span>dedicated amateur</span></div>
+                    <div class="profile-row"><span>location</span><span>Pakistan</span></div>
+                    <div class="profile-row"><span>learns via</span><span>Google, docs, trial &amp; error</span></div>
+                    <div class="profile-row"><span>goal</span><span>pro developer</span></div>
+                </div>
+
+                <div class="about-text reveal">
+                    <h3>Hey, I'm Asim 👋</h3>
+                    <p>
+                        I'm an independent, self-guided programming learner. I don't have a formal engineering background — right now I'm a <mark>determined amateur</mark>, and I'm okay saying that out loud.
+                    </p>
+                    <p>
+                        My routine is unglamorous but it works: I Google things, read the docs, write the code myself, run into errors, and fix them one at a time. Repeat tomorrow.
+                    </p>
+                    <p>
+                        I study independently because I like solving the puzzle myself before I look up the answer. Right now that means core logic, basic scripting, and understanding how the web actually works underneath the frameworks.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag-chip">📖 self-studying daily</span>
+                        <span class="tag-chip">🔍 active googler</span>
+                        <span class="tag-chip">🔨 practice-first</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey">
+            <span class="eyebrow reveal">02 — the log</span>
+            <h2 class="section-title reveal">progress, as an actual commit history</h2>
+
+            <div class="git-log reveal">
+                <div class="log-head"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+                <div class="log-cmd">$ git log --oneline --reverse</div>
+                <div class="commit">
+                    <span class="hash">a3f1c9e</span>
+                    <span class="msg"><span class="type">learn:</span> read first tutorial, understood almost none of it</span>
+                    <span class="when">early days</span>
+                </div>
+                <div class="commit">
+                    <span class="hash">b7d2091</span>
+                    <span class="msg"><span class="type">fix:</span> finally understood why the console kept saying "undefined"</span>
+                    <span class="when">week 3</span>
+                </div>
+                <div class="commit">
+                    <span class="hash">c94e3aa</span>
+                    <span class="msg"><span class="type">learn:</span> loops, arrays, and functions stopped looking like magic</span>
+                    <span class="when">recent</span>
+                </div>
+                <div class="commit">
+                    <span class="hash">d112f4b</span>
+                    <span class="msg"><span class="type">chore:</span> got comfortable enough with git &amp; terminal to stop panicking</span>
+                    <span class="when">recent</span>
+                </div>
+                <div class="commit wip">
+                    <span class="hash">-------</span>
+                    <span class="msg">TODO: ship first real script, ideally without googling every line</span>
+                    <span class="when">in progress</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <span class="eyebrow reveal">03 — toolkit</span>
+            <h2 class="section-title reveal">what I'm actually practicing</h2>
+
+            <div class="toolkit-grid">
+                <div class="toolkit-card reveal">
+                    <h3>Languages</h3>
+                    <p class="sub">where I stand today, no rounding up</p>
+                    <div class="bar-row">
+                        <div class="bar-label"><span>HTML / CSS</span><span>65%</span></div>
+                        <div class="bar-fill"><span class="filled">█████████████</span><span class="empty">███████</span></div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label"><span>JavaScript</span><span>40%</span></div>
+                        <div class="bar-fill"><span class="filled">████████</span><span class="empty">████████████</span></div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label"><span>C / C++ basics</span><span>35%</span></div>
+                        <div class="bar-fill"><span class="filled">███████</span><span class="empty">█████████████</span></div>
+                    </div>
+                </div>
+
+                <div class="toolkit-card reveal">
+                    <h3>Concepts</h3>
+                    <p class="sub">the ideas I'm still wrapping my head around</p>
+                    <ul class="check-list">
+                        <li><span class="check-box checked"></span> logical thinking</li>
+                        <li><span class="check-box checked"></span> problem solving</li>
+                        <li><span class="check-box"></span> git &amp; GitHub basics</li>
+                        <li><span class="check-box"></span> reading docs without panicking</li>
+                    </ul>
+                </div>
+
+                <div class="toolkit-card reveal">
+                    <h3>Curious about</h3>
+                    <p class="sub">next things worth breaking</p>
+                    <div class="interest-tags">
+                        <span>🌐 HTML pages</span>
+                        <span>🤖 simple automation</span>
+                        <span>🕸️ web scraping</span>
+                        <span>🐍 Python basics</span>
+                        <span>💻 terminal commands</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning">
+            <span class="eyebrow reveal">04 — right now</span>
+            <h2 class="section-title reveal">sticky notes</h2>
+
+            <div class="board">
+                <div class="sticky reveal">
+                    <h3>Daily study focus</h3>
+                    <ul>
+                        <li><strong>JavaScript logic</strong> — loops, arrays, functions</li>
+                        <li><strong>Python scripting</strong> — small scripts for simple files &amp; tasks</li>
+                        <li><strong>Git &amp; terminal</strong> — getting comfortable on the command line</li>
+                    </ul>
+                    <div class="next-note">→ next: build small script tools, push them to GitHub</div>
+                </div>
+
+                <div class="sticky reveal">
+                    <h3>Web scraping curiosity</h3>
+                    <ul>
+                        <li>Want to pull data from real pages using Python</li>
+                        <li>Looking at <strong>Requests</strong> and <strong>BeautifulSoup</strong></li>
+                        <li>It's basically logic practice with a payoff</li>
+                    </ul>
+                    <div class="next-note">→ goal: scrape a simple list, save it as a text file</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <span class="eyebrow reveal">05 — get in touch</span>
+            <h2 class="section-title reveal">send a postcard</h2>
+
+            <div class="postcard reveal">
+                <div class="postcard-left">
+                    <div class="stamp">✉</div>
+                    <div class="postmark">from · Pakistan</div>
+
+                    <a href="mailto:aasimdott@yahoo.com" class="contact-row">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span><span class="label">email</span><br><span class="value">aasimdott@yahoo.com</span></span>
+                    </a>
+
+                    <div class="contact-row">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span><span class="label">username</span><br><span class="value">@aasimdott</span></span>
+                    </div>
+
+                    <div class="socials">
+                        <a href="https://instagram.com/aasimdott" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://x.com/aasimdott" target="_blank" class="social-icon" aria-label="X / Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="postcard-right">
+                    <div class="postmark">write a message >
+                        ✎this form isn't wired up yet — email me directly at aasimdott@yahoo.com and I'll reply personally.
+                    </div>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="field">
+                            <label for="name">your name</label>
+                            <input id="name" type="text" required placeholder="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">your email</label>
+                            <input id="email" type="email" required placeholder="username@example.com" />
+                        </div>
+                        <div class="field">
+                            <label for="message">message</label>
+                            <textarea id="message" rows="4" required placeholder="write your message..."></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="send-btn">send message →</button>
+                        <div id="successMsg" class="success-note hidden">✓ sent — I'll get back to you soon.</div>
+                    </form>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <script src="script.js">
-        // ===== Particles =====
-    </script>
+    <footer>
+        <div class="footer-inner">
+            <span>© 2026 Muhammad Asim — still debugging, still learning.</span>
+            <span>git commit -m "one more day of practice"</span>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
